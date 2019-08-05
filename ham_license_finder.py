@@ -62,14 +62,18 @@ def parse_file():
         for row in hamreader:
             ham = {
                 "callsign":  row[4],
-                "fullname":  row[7],
-                "firstname": row[8],
-                "lastname":  row[10],
-                "address":   row[15],
-                "city":      row[16],
+                "fullname":  row[7].title(),
+                "firstname": row[8].capitalize(),
+                "lastname":  row[10].capitalize(),
+                "address":   row[15].title(),
+                "city":      row[16].capitalize(),
                 "state":     row[17],
-                "zipcode":   row[18]
+                "zipcode":   row[18],
+                "date":      ts
             }
+            # Removes Clubs
+            if not ham["firstname"] and not ham["lastname"]:
+                continue
 
             new_hams.append(ham)
 
