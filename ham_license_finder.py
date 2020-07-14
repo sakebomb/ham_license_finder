@@ -34,7 +34,6 @@ def download_file(filename):
         logging.info("Removing old l_amat file")
         os.remove(filename)
 
-    # url = "ftp://wirelessftp.fcc.gov/pub/uls/complete/"
     url = "ftp://wirelessftp.fcc.gov/pub/uls/daily/"
 
     try:
